@@ -1,0 +1,20 @@
+* { margin: 0; padding: 0; outline: none }
+header, footer, article, section  { display: block }
+
+html  { background-color: #E8E8E8 }
+body  { width: 800px; margin: 0 auto; padding: 3em; background-color: #FFFFFF; color: #585858; -webkit-box-shadow: 0px 0px 5px #B5B5B5; -moz-box-shadow: 0px 0px 5px #B5B5B5; box-shadow: 0px 0px 5px #B5B5B5 }
+
+header h1   { font-size: 2.2em }
+header a    { float: right; margin-top: 0.5em }
+footer      { text-align: center; margin-top: 2em; font-size: 0.9em }
+
+h1, h2  { color: #252525 }
+h1      { font-size: 2em }
+p, a    { color: inherit; line-height: 1; }
+a       { display: inline-block; padding: 0.2em 0.4em; background-color: #EBEBEB; text-decoration: none; font-style: italic; cursor: pointer }
+
+p         { margin: 0.5em 0 }
+
+article     { margin: 1.6em 0; background: transparent url(/quote.png) no-repeat }
+article h1  { font-size: 1.2em }
+article > * { padding-left: 30px }

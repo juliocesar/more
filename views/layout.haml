@@ -1,0 +1,20 @@
+!!! 5
+%html(lang="en")
+  %head
+    %title More
+    %meta(charset="utf-8")
+    %meta(name="author" content="Julio Cesar Ody")
+    %link(rel="stylesheet" href="/screen.css")
+    %script(src="/jquery-1.4.2.min.js")
+    %script(src="/more.js")
+    %script
+      $(['header', 'footer', 'section', 'article']).each(function() { document.createElement(this) });
+  %body
+    %header
+      %a(href="/paginated")
+        Check out the paginated example →
+      %h1 More
+    = yield
+    %footer
+      Made with ♥ by
+      %a(href="http://crazyhollwood.org") Julio Cesar Ody

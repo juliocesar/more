@@ -1,0 +1,7 @@
+%h2 Dynamically expanding lists
+%section.articles#expanding
+  - @poems[0..5].each do |poem|
+    %article
+      %h1= poem.title
+      %p= poem.body
+  %a Load more poems ↓
