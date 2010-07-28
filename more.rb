@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'haml'
 require 'yaml'
 
 $poems = YAML.load_file 'poems.yml'
