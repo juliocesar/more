@@ -1,7 +1,21 @@
-%h2 Dynamically expanding lists
+%p 
+  Expanding lists are cool, but you need to ensure that it works fine with the browser's back
+  and forward buttons for usability sake.
+%p
+  For example: go to <a href="http://slashdot.org">Slashdot</a>. When you scroll towards the bottom
+  of the page, it will automatically load a few more articles (or when you press the "Many more") link.
+  after loading articles like that a couple of times, visit one of the loaded articles. Now if you hit
+  the back button, you're back to the home page... with none of the articles you waited to load in there.
+%p
+  That's a massive fail, specially if you're browsing from a mobile phone. Relying on hash changes is
+  safer, since you can control state via the hash, and make sure the page gets built accordingly.
+%p
+  Though this example is rough and simplistic as far as loading the collections go, it illustrates
+  the solution I'm proposing quite nicely. Scroll down and hit the "Load more poems" link a few times.
+  Then hit the back and forward buttons.
 %section.articles#expanding
-  - @poems[0..5].each do |poem|
+  - @poems.each do |poem|
     %article
-      %h1= poem.title
-      %p= poem.body
-  %a Load more poems ↓
+      %h1= poem[:title]
+      %p= poem[:body]
+  %a(href="#chunk=1") Load more poems ↓

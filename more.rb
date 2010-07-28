@@ -1,14 +1,17 @@
 require 'sinatra'
 require 'faker'
+require 'yaml'
 
-Poem    = Struct.new :title, :body
+$poems = YAML.load_file 'poems.yml'
+
 get '/' do
-  @poems  = Array.new(60) { Poem.new(Faker::Lorem.sentence, Faker::Lorem.paragraph(2 + rand(5))) }
+  @poems = $poems[0..4]
   haml :expand
 end
 
-get '/paginated' do
-  @poems  = Array.new(60) { Poem.new(Faker::Lorem.sentence, Faker::Lorem.paragraph(2 + rand(5))) }
-  haml :paginated
+get '/more' do
+  chunk   = params[:chunk].to_i
+  offset  = chunk * 5
+  @poems  = $poems[5..(4 + offset)]
+  haml :more, :layout => false
 end
-
