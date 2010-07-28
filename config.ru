@@ -1,2 +1,2 @@
-use File.join(File.dirname(__FILE__), 'more')
+require 'more'
 run Sinatra::Application
