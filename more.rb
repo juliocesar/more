@@ -1,5 +1,4 @@
 require 'sinatra'
-require 'faker'
 require 'yaml'
 
 $poems = YAML.load_file 'poems.yml'
